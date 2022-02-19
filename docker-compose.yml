@@ -27,4 +27,6 @@ services:
       - MYSQL_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=password
     container_name: nodejs
+    depends_on: 
+      - mysql_server
     
