@@ -22,9 +22,13 @@ services:
     ports:
       - '9898:9898'
     environment: 
-      - MYSQL_DATABASE=mysqldb
-      - MYSQL_USER=user
-      - MYSQL_PASSWORD=password
+      - DB_NAME=mysqldb
+      - DB_USER=user
+      - DB_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=password
     container_name: nodejs
+    
+#     user: process.env.DB_USER,
+#     password: process.env.DB_PASSWORD,
+#     database: process.env.DB_NAME
     
