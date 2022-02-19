@@ -14,7 +14,7 @@ services:
 #       - MYSQL_ROOT_PASSWORD=secret
     ports:
       - "3306:3306"
-    container_name: mysql
+    container_name: mysql_db
     
   app:
     build: 
@@ -26,7 +26,7 @@ services:
     ports:
       - '9898:9898'
     environment: 
-      - DB_HOST=mysql
+      - DB_HOST=mysql_db
       - DB_NAME=mysqldb
       - DB_USER=user
       - DB_PASSWORD=password
