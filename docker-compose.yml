@@ -8,6 +8,10 @@ services:
       - MYSQL_USER=user
       - MYSQL_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=password
+#             - MYSQL_DATABASE=dapi_assg_db
+#       - MYSQL_USER=dan
+#       - MYSQL_PASSWORD=secret
+#       - MYSQL_ROOT_PASSWORD=secret
     ports:
       - "3306:3306"
     container_name: mysql
@@ -28,6 +32,8 @@ services:
       - DB_PASSWORD=password
       - MYSQL_ROOT_PASSWORD=password
     container_name: nodejs
+    depends_on: 
+      - mysql
     
 #     user: process.env.DB_USER,
 #     password: process.env.DB_PASSWORD,
